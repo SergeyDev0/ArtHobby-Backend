@@ -16,27 +16,30 @@ public class ProductController {
     @Autowired
     ProductService productService;
 
+    @CrossOrigin
     @GetMapping("/getAllProducts")
-
     public List<Product> getAllProducts(Model model) {
         List<Product> products = productService.getAllProduct();
         model.addAttribute("products", products);
         return productService.getAllProduct();
     }
 
+    @CrossOrigin
     @GetMapping("/getProduct/{id}")
     public Product getProductById(@PathVariable Long id, Model model) {
         model.addAttribute("cakes", productService.getProductById(id));
         return productService.getProductById(id);
     }
 
+    @CrossOrigin
     @PostMapping("/saveProduct")
     public void saveProduct(@RequestBody Product product) throws IOException {
         productService.saveProduct(product);
     }
 
+    @CrossOrigin
     @GetMapping("/filterByDate")
-    public List<Product> filterByDate(){
+    public List<Product> filterByDate() {
         return productService.filterByDateDESC();
     }
 }
