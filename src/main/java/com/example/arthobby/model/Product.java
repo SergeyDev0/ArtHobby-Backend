@@ -2,18 +2,17 @@ package com.example.arthobby.model;
 
 
 import lombok.*;
-import org.hibernate.Hibernate;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import java.time.LocalDateTime;
-import java.util.Objects;
 
 @Entity
-@Getter
-@Setter
-@ToString
-@RequiredArgsConstructor
-@Table(name = "product")
+@Data
+
+//@Table(name = "product")
 
 public class Product {
 
@@ -21,33 +20,21 @@ public class Product {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column
+    //    @Column
     private String name;
-    @Column
+    //    @Column
     private LocalDateTime dateOfCreate;
-    @Column
+    //    @Column
     private Long price;
-    @Column
+    //    @Column
     private String type;
-    @Column
+    //    @Column
     private String material;
-    @Column
+    //    @Column
     private String size;
-    @Column
+    //    @Column
     private String fileName;
-    @Column
+    //    @Column
     private String article;
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || Hibernate.getClass(this) != Hibernate.getClass(o)) return false;
-        Product product = (Product) o;
-        return id != null && Objects.equals(id, product.id);
-    }
-
-    @Override
-    public int hashCode() {
-        return getClass().hashCode();
-    }
 }

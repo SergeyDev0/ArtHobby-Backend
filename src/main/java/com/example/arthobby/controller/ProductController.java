@@ -12,7 +12,7 @@ import java.util.List;
 
 @RestController
 @CrossOrigin
-@Transactional
+//@Transactional
 public class ProductController {
 
     @Autowired
