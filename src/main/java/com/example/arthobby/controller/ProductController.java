@@ -41,7 +41,7 @@ public class ProductController {
     }
 
     @GetMapping("/getAllUniqueProductTypes")
-    public List<Product> getAllUniqueProductTypes(){
+    public List<String> getAllUniqueProductTypes(){
         return productService.findOnlyProductTypes();
     }
 }

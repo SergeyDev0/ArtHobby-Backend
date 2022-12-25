@@ -27,7 +27,7 @@ public interface ProductService {
 //
     public List<Product> filterByDateDESC();
 
-    public List<Product> findOnlyProductTypes();
+    public List<String> findOnlyProductTypes();
 
 
 }

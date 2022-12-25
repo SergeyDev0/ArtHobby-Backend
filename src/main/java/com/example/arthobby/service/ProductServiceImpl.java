@@ -51,8 +51,8 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    public List<Product> findOnlyProductTypes() {
-        return getAllProduct().stream().filter(Utils.distinctByKey(Product::getType)).collect(Collectors.toList());
+    public List<String> findOnlyProductTypes() {
+        return getAllProduct().stream().map(product -> product.getType()).distinct().collect(Collectors.toList());
     }
 }
 
