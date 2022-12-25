@@ -1,7 +1,6 @@
 package com.example.arthobby.service;
 
 import com.example.arthobby.model.Product;
-import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
 import java.util.List;
@@ -16,7 +15,7 @@ public interface ProductService {
 
     public void deleteProduct(Long id);
 
-//    public List<Product> filterByNameASC();
+    //    public List<Product> filterByNameASC();
 //
 //    public List<Product> filterByNameDESC();
 //
@@ -27,6 +26,8 @@ public interface ProductService {
 //    public List<Product> filterByType();
 //
     public List<Product> filterByDateDESC();
+
+    public List<String> findOnlyProductTypes();
 
 
 }

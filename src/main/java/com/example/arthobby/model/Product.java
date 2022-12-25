@@ -1,10 +1,7 @@
 package com.example.arthobby.model;
 
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -23,19 +20,21 @@ public class Product {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    //    @Column
     private String name;
-
+    //    @Column
     private LocalDateTime dateOfCreate;
-
+    //    @Column
     private Long price;
-
+    //    @Column
     private String type;
-
+    //    @Column
     private String material;
-
+    //    @Column
     private String size;
-
+    //    @Column
     private String fileName;
-
+    //    @Column
     private String article;
+
 }

@@ -2,14 +2,15 @@ package com.example.arthobby.service;
 
 import com.example.arthobby.model.Product;
 import com.example.arthobby.repo.ProductRepo;
+import com.example.arthobby.utils.Utils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
-import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class ProductServiceImpl implements ProductService {
@@ -49,6 +50,10 @@ public class ProductServiceImpl implements ProductService {
         return productRepo.findAll(Sort.by(Sort.Direction.DESC, "dateOfCreate"));
     }
 
+    @Override
+    public List<String> findOnlyProductTypes() {
+        return getAllProduct().stream().map(product -> product.getType()).distinct().collect(Collectors.toList());
+    }
 }
 
 
