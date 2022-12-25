@@ -39,4 +39,9 @@ public class ProductController {
     public List<Product> filterByDate(){
         return productService.filterByDateDESC();
     }
+
+    @GetMapping("/getAllUniqueProductTypes")
+    public List<Product> getAllUniqueProductTypes(){
+        return productService.findOnlyProductTypes();
+    }
 }
