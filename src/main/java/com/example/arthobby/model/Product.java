@@ -10,10 +10,10 @@ import javax.persistence.Id;
 import java.time.LocalDateTime;
 
 @Entity
-@Data
-
-//@Table(name = "product")
-
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 public class Product {
 
     @Id
